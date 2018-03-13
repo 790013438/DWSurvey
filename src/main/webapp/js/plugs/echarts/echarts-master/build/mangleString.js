@@ -63,7 +63,7 @@ function mangleString(source) {
             if (node.type === SYNTAX.Literal
                 && typeof node.value === 'string'
             ) {
-                // Ignore if string is the key of property
+                // Ignore if string is the snippets of property
                 if (parent.type === SYNTAX.Property) {
                     return;
                 }
@@ -112,7 +112,7 @@ function mangleString(source) {
             if ((node.type === SYNTAX.Literal
                 && typeof node.value === 'string')
             ) {
-                // Ignore if string is the key of property
+                // Ignore if string is the snippets of property
                 if (parent.type === SYNTAX.Property) {
                     return;
                 }

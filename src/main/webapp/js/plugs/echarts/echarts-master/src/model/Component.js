@@ -65,7 +65,7 @@ define(function(require) {
         ecModel: null,
 
         /**
-         * key: componentType
+         * snippets: componentType
          * value:  Component model list, can not be null.
          * @type {Object.<string, Array.<module:echarts/model/Model>>}
          * @readOnly

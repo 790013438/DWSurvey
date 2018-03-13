@@ -91,7 +91,7 @@ define(function(require) {
     };
 
     /**
-     * [{key: dataZoomId, value: {dataZoomId, range}}, ...]
+     * [{snippets: dataZoomId, value: {dataZoomId, range}}, ...]
      * History length of each dataZoom may be different.
      * this._history[0] is used to store origin range.
      * @type {Array.<Object>}

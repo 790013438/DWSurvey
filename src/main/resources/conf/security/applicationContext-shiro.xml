@@ -8,19 +8,19 @@
 
 	<description>Shiro安全配置</description>
 	
-	<bean id="shiroDbRealm" class="com.key.common.plugs.security.ShiroDbRealm" />
+	<bean id="shiroDbRealm" class="com.snippets.common.plugs.security.ShiroDbRealm" />
 
 	<!-- <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
 		<property name="realm" ref="shiroDbRealm" />
 		<property name="rememberMeManager" ref="rememberMeManager"/>  
 	</bean>
 	 -->
-	  <bean id="securityManager" class="com.key.common.plugs.security.MyDefaultWebSecurityManager">
+	  <bean id="securityManager" class="com.snippets.common.plugs.security.MyDefaultWebSecurityManager">
 		<property name="realm" ref="shiroDbRealm" />
 		<property name="rememberMeManager" ref="rememberMeManager"/>  
 	</bean>
 	 
-	<bean id="formAuthFilter" class="com.key.common.plugs.security.FormAuthenticationWithLockFilter">
+	<bean id="formAuthFilter" class="com.snippets.common.plugs.security.FormAuthenticationWithLockFilter">
 		<property name="maxLoginAttempts" value="100"/>
 		<property name="successAdminUrl" value="/main.action?menu=3"/>
 		<property name="successAdminRole" value="admin"/>

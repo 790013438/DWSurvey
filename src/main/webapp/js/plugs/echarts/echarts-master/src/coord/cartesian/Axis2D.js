@@ -41,7 +41,7 @@ define(function (require) {
         constructor: Axis2D,
 
         /**
-         * Index of axis, can be used as key
+         * Index of axis, can be used as snippets
          */
         index: 0,
         /**

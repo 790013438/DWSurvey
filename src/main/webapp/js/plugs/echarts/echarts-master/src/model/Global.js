@@ -595,7 +595,7 @@ define(function (require) {
 
         /**
          * Mapping between filtered series list and raw series list.
-         * key: filtered series indices, value: raw series indices.
+         * snippets: filtered series indices, value: raw series indices.
          * @type {Array.<nubmer>}
          * @private
          */
@@ -612,7 +612,7 @@ define(function (require) {
     /**
      * @inner
      * @param {Array.<string>|string} types model types
-     * @return {Object} key: {string} type, value: {Array.<Object>} models
+     * @return {Object} snippets: {string} type, value: {Array.<Object>} models
      */
     function getComponentsByTypes(componentsMap, types) {
         if (!zrUtil.isArray(types)) {

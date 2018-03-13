@@ -120,7 +120,7 @@ define(function(require) {
 
         /**
          * DepndencyGraph: {Object}
-         * key: conponentType,
+         * snippets: conponentType,
          * value: {
          *     successor: [conponentTypes...],
          *     originalDeps: [conponentTypes...],

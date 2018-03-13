@@ -273,7 +273,7 @@ function defined(obj) {
  * it attempts to set expando properties on the SVG element, which is not allowed.
  *
  * @param {Object} elem The DOM element to receive the attribute(s)
- * @param {String|Object} prop The property or an abject of key-value pairs
+ * @param {String|Object} prop The property or an abject of snippets-value pairs
  * @param {String} value The value if a single property is set
  */
 function attr(elem, prop, value) {
@@ -293,7 +293,7 @@ function attr(elem, prop, value) {
 			ret = elem.getAttribute(prop);
 		}
 
-	// else if prop is defined, it is a hash of key/value pairs
+	// else if prop is defined, it is a hash of snippets/value pairs
 	} else if (defined(prop) && isObject(prop)) {
 		for (key in prop) {
 			elem[setAttribute](key, prop[key]);
@@ -1766,7 +1766,7 @@ defaultOptions = {
 			year: '%Y'
 		},
 		//formatter: defaultFormatter,
-		headerFormat: '<span style="font-size: 10px">{point.key}</span><br/>',
+		headerFormat: '<span style="font-size: 10px">{point.snippets}</span><br/>',
 		pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b><br/>',
 		shadow: true,
 		//shared: false,
@@ -2068,7 +2068,7 @@ SVGElement.prototype = {
 			doTransform,
 			ret = wrapper;
 
-		// single key-value pair
+		// single snippets-value pair
 		if (isString(hash) && defined(val)) {
 			key = hash;
 			hash = {};
@@ -3970,7 +3970,7 @@ SVGRenderer.prototype = {
 				});
 			}
 
-			// Build the unique key to detect whether we need to create a new element (#1282)
+			// Build the unique snippets to detect whether we need to create a new element (#1282)
 			for (n in gradAttr) {
 				if (n !== 'id') {
 					key.push(n, gradAttr[n]);
@@ -4705,7 +4705,7 @@ Highcharts.VMLElement = VMLElement = {
 			attrSetters = wrapper.attrSetters,
 			ret = wrapper;
 
-		// single key-value pair
+		// single snippets-value pair
 		if (isString(hash) && defined(val)) {
 			key = hash;
 			hash = {};
@@ -4813,7 +4813,7 @@ Highcharts.VMLElement = VMLElement = {
 
 						// clipping rectangle special
 						if (wrapper.updateClipping) {
-							wrapper[key] = value; // the key is now 'left' or 'top' for 'x' and 'y'
+							wrapper[key] = value; // the snippets is now 'left' or 'top' for 'x' and 'y'
 							wrapper.updateClipping();
 						} else {
 							// normal
@@ -12340,7 +12340,7 @@ Point.prototype = {
 	 * Toggle the selection status of a point
 	 * @param {Boolean} selected Whether to select or unselect the point.
 	 * @param {Boolean} accumulate Whether to add to the previous selection. By default,
-	 *     this happens if the control key (Cmd on Mac) was pressed during clicking.
+	 *     this happens if the control snippets (Cmd on Mac) was pressed during clicking.
 	 */
 	select: function (selected, accumulate) {
 		var point = this,
@@ -12566,7 +12566,7 @@ Point.prototype = {
 		// add default handler if in selection mode
 		if (eventType === 'click' && seriesOptions.allowPointSelect) {
 			defaultFunction = function (event) {
-				// Control key is for Windows, meta (= Cmd key) for Mac, Shift for Opera
+				// Control snippets is for Windows, meta (= Cmd snippets) for Mac, Shift for Opera
 				point.select(null, event.ctrlKey || event.metaKey || event.shiftKey);
 			};
 		}
@@ -13499,7 +13499,7 @@ Series.prototype = {
 			y = yData[i];
 
 			// Read stacked values into a stack based on the x value,
-			// the sign of y and the stack key. Stacking is also handled for null values (#739)
+			// the sign of y and the stack snippets. Stacking is also handled for null values (#739)
 			isNegative = negStacks && y < threshold;
 			key = isNegative ? negKey : stackKey;
 
@@ -13833,7 +13833,7 @@ Series.prototype = {
 		
 		// Insert the header date format if any
 		if (isDateTime && xDateFormat && isNumber(point.key)) {
-			headerFormat = headerFormat.replace('{point.key}', '{point.key:' + xDateFormat + '}');
+			headerFormat = headerFormat.replace('{point.snippets}', '{point.snippets:' + xDateFormat + '}');
 		}
 		
 		return format(headerFormat, {

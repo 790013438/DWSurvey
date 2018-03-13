@@ -30,7 +30,7 @@ define(function (require) {
     /**
      * payload: {
      *     type: 'takeGlobalCursor',
-     *     key: 'dataZoomSelect', or 'brush', or ...,
+     *     snippets: 'dataZoomSelect', or 'brush', or ...,
      *         If no userKey, release global cursor.
      * }
      */

@@ -75,7 +75,7 @@ define(function (require) {
 
         return {
             /**
-             * specified the key to groupby the arrays.
+             * specified the snippets to groupby the arrays.
              * users can specified one more keys.
              * @param {Function} d
              */

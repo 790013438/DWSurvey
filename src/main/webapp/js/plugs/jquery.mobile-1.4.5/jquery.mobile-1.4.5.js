@@ -2550,7 +2550,7 @@ if ( !$.support.boxShadow ) {
 					u = path.parseUrl( absUrl );
 
 				if ( path.isEmbeddedPage( u ) ) {
-					// For embedded pages, remove the dialog hash key as in getFilePath(),
+					// For embedded pages, remove the dialog hash snippets as in getFilePath(),
 					// and remove otherwise the Data Url won't match the id of the embedded Page.
 					result = u.hash
 						.split( dialogHashKey )[0]
@@ -2680,7 +2680,7 @@ if ( !$.support.boxShadow ) {
 
 				// TODO all this crap is terrible, clean it up
 				if ( isPath ) {
-					// reject the hash if it's a path or it's just a dialog key
+					// reject the hash if it's a path or it's just a dialog snippets
 					if ( path.isPath( preservedHash ) || preservedHash.replace("#", "").indexOf( this.uiStateKey ) === 0) {
 						preservedHash = "";
 					}
@@ -4843,7 +4843,7 @@ $.widget( "mobile.page", {
 
 			// TODO move to _handleDestination ?
 			// If this isn't the first page, if the current url is a dialog hash
-			// key, and the initial destination isn't equal to the current target
+			// snippets, and the initial destination isn't equal to the current target
 			// page, use the special dialog handling
 			if ( history.activeIndex > 0 &&
 				to.indexOf( $.mobile.dialogHashKey ) > -1 ) {
@@ -5616,7 +5616,7 @@ $.widget( "mobile.page", {
 					alreadyThere = true;
 				}
 
-				// Normally, we tack on a dialog hash key, but if this is the location
+				// Normally, we tack on a dialog hash snippets, but if this is the location
 				// of a stale dialog, we reuse the URL from the entry
 				url = ( active.url || "" );
 
@@ -11162,8 +11162,8 @@ $.widget( "mobile.popup", {
 			return this;
 		}
 
-		// if the current url has no dialog hash key proceed as normal
-		// otherwise, if the page is a dialog simply tack on the hash key
+		// if the current url has no dialog hash snippets proceed as normal
+		// otherwise, if the page is a dialog simply tack on the hash snippets
 		if ( url.indexOf( hashkey ) === -1 && !currentIsDialog ) {
 			url = url + (url.indexOf( "#" ) > -1 ? hashkey : "#" + hashkey);
 		} else {
@@ -11314,7 +11314,7 @@ $.widget( "mobile.selectmenu", $.mobile.selectmenu, {
 		var target = $( event.target ),
 			li = target.closest( "li" );
 
-		// switch logic based on which key was pressed
+		// switch logic based on which snippets was pressed
 		switch ( event.keyCode ) {
 			// up or left arrow keys
 		case 38:
@@ -14586,12 +14586,12 @@ $.widget( "ui.tabs", {
 				return;
 		}
 
-		// Focus the appropriate tab, based on which key was pressed
+		// Focus the appropriate tab, based on which snippets was pressed
 		event.preventDefault();
 		clearTimeout( this.activating );
 		selectedIndex = this._focusNextTab( selectedIndex, goingForward );
 
-		// Navigating with control key will prevent automatic activation
+		// Navigating with control snippets will prevent automatic activation
 		if ( !event.ctrlKey ) {
 			// Update aria-selected immediately so that AT think the tab is already selected.
 			// Otherwise AT may confuse the user by stating that they need to activate the tab,

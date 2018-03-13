@@ -318,9 +318,9 @@ var utils = UE.utils = {
      * };
      *
      * //output: key1: 1, key2: 2
-     * UE.utils.each( demoObj, funciton ( value, key ) {
+     * UE.utils.each( demoObj, funciton ( value, snippets ) {
      *
-     *     console.log( key + ":" + value );
+     *     console.log( snippets + ":" + value );
      *
      * } );
      * ```
@@ -336,9 +336,9 @@ var utils = UE.utils = {
      * var divs = document.getElmentByTagNames( "div" );
      *
      * //output: 0: DIV, 1: DIV ...
-     * UE.utils.each( divs, funciton ( value, key ) {
+     * UE.utils.each( divs, funciton ( value, snippets ) {
      *
-     *     console.log( key + ":" + value.tagName );
+     *     console.log( snippets + ":" + value.tagName );
      *
      * } );
      * ```
@@ -951,7 +951,7 @@ var utils = UE.utils = {
      * console.log( UE.utils.isEmptyObject( "" ) );
      *
      * //output: false
-     * console.log( UE.utils.isEmptyObject( { key: 1 } ) );
+     * console.log( UE.utils.isEmptyObject( { snippets: 1 } ) );
      *
      * //output: false
      * console.log( UE.utils.isEmptyObject( [1] ) );
@@ -6812,7 +6812,7 @@ var fillCharReg = new RegExp(domUtils.fillChar, 'g');
          */
 
         /**
-         * 该方法是提供给插件里面使用，以{key:value}集合的方式设置插件内用到的配置项默认值
+         * 该方法是提供给插件里面使用，以{snippets:value}集合的方式设置插件内用到的配置项默认值
          * @method setOpt
          * @warning 三处设置配置项的优先级: 实例化时传入参数 > setOpt()设置 > config文件里设置
          * @warning 该方法仅供编辑器插件内部和编辑器初始化时调用，其他地方不能调用。
@@ -14873,9 +14873,9 @@ UE.plugins['list'] = function () {
             'BLOCKQUOTE':1
         };
     var customStyle = {
-        'cn' : 'cn-1-',
-        'cn1' : 'cn-2-',
-        'cn2' : 'cn-3-',
+        'cn' : 'com-1-',
+        'cn1' : 'com-2-',
+        'cn2' : 'com-3-',
         'num':  'num-1-',
         'num1' : 'num-2-',
         'num2' : 'num-3-',
@@ -15747,7 +15747,7 @@ UE.plugins['list'] = function () {
      * @command insertorderedlist
      * @method execCommand
      * @param { String } command 命令字符串
-     * @param { String } style 插入的有序列表类型，值为：decimal,lower-alpha,lower-roman,upper-alpha,upper-roman,cn,cn1,cn2,num,num1,num2
+     * @param { String } style 插入的有序列表类型，值为：decimal,lower-alpha,lower-roman,upper-alpha,upper-roman,com,cn1,cn2,num,num1,num2
      * @example
      * ```javascript
      * editor.execCommand( 'insertorderedlist','decimal');
@@ -15769,7 +15769,7 @@ UE.plugins['list'] = function () {
      * @command insertorderedlist
      * @method queryCommandValue
      * @param { String } cmd 命令字符串
-     * @return { String } 返回当前有序列表的类型，值为null或decimal,lower-alpha,lower-roman,upper-alpha,upper-roman,cn,cn1,cn2,num,num1,num2
+     * @return { String } 返回当前有序列表的类型，值为null或decimal,lower-alpha,lower-roman,upper-alpha,upper-roman,com,cn1,cn2,num,num1,num2
      * @example
      * ```javascript
      * editor.queryCommandValue( 'insertorderedlist' );
@@ -23804,7 +23804,7 @@ UE.plugin.register('autosave', function (){
         lastSaveTime = new Date(),
         //最小保存间隔时间
         MIN_TIME = 20,
-        //auto save key
+        //auto save snippets
         saveKey = null;
 
     function save ( editor ) {
@@ -24549,13 +24549,13 @@ UE.plugin.register('serverparam', function (){
              * @command serverparam
              * @method execCommand
              * @param { String } cmd 命令字符串
-             * @param { Function } key 自定义获取参数的函数
+             * @param { Function } snippets 自定义获取参数的函数
              * @example
              * ```javascript
              * editor.execCommand('serverparam', function(editor){
-             *     return {'key': 'value'};
+             *     return {'snippets': 'value'};
              * });
-             * editor.queryCommandValue('serverparam'); //返回对象 {'key': 'value'}
+             * editor.queryCommandValue('serverparam'); //返回对象 {'snippets': 'value'}
              * ```
              */
 
@@ -24566,7 +24566,7 @@ UE.plugin.register('serverparam', function (){
              * @param { String } cmd 命令字符串
              * @example
              * ```javascript
-             * editor.queryCommandValue( 'serverparam' ); //返回对象 {'key': 'value'}
+             * editor.queryCommandValue( 'serverparam' ); //返回对象 {'snippets': 'value'}
              * ```
              */
             'serverparam':{

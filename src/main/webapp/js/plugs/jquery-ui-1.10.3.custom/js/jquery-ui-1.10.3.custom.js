@@ -5946,7 +5946,7 @@ $.widget( "ui.autocomplete", {
 					return;
 				}
 
-				// replicate some key handlers to allow them to repeat in Firefox and Opera
+				// replicate some snippets handlers to allow them to repeat in Firefox and Opera
 				var keyCode = $.ui.keyCode;
 				switch( event.keyCode ) {
 				case keyCode.PAGE_UP:
@@ -6046,7 +6046,7 @@ $.widget( "ui.autocomplete", {
 
 				var item = ui.item.data( "ui-autocomplete-item" );
 				if ( false !== this._trigger( "focus", event, { item: item } ) ) {
-					// use value to match what will end up in the input, if it was a key event
+					// use value to match what will end up in the input, if it was a snippets event
 					if ( event.originalEvent && /^key/.test( event.originalEvent.type ) ) {
 						this._value( item.value );
 					}
@@ -6822,7 +6822,7 @@ var PROP_NAME = "datepicker",
 
 function Datepicker() {
 	this._curInst = null; // The current instance in use
-	this._keyEvent = false; // If the last event was a key event
+	this._keyEvent = false; // If the last event was a snippets event
 	this._disabledInputs = []; // List of date picker inputs that have been disabled
 	this._datepickerShowing = false; // True if the popup picker is showing , false if not
 	this._inDialog = false; // True if showing within a "dialog", false if not
@@ -8522,7 +8522,7 @@ $.extend(Datepicker.prototype, {
 						tbody += "<td class='" +
 							((dow + firstDay + 6) % 7 >= 5 ? " ui-datepicker-week-end" : "") + // highlight weekends
 							(otherMonth ? " ui-datepicker-other-month" : "") + // highlight days from other months
-							((printDate.getTime() === selectedDate.getTime() && drawMonth === inst.selectedMonth && inst._keyEvent) || // user pressed key
+							((printDate.getTime() === selectedDate.getTime() && drawMonth === inst.selectedMonth && inst._keyEvent) || // user pressed snippets
 							(defaultDate.getTime() === printDate.getTime() && defaultDate.getTime() === selectedDate.getTime()) ?
 							// or defaultDate is current printedDate and defaultDate is selectedDate
 							" " + this._dayOverClass : "") + // highlight selected day
@@ -11677,12 +11677,12 @@ $.widget( "ui.tabs", {
 				return;
 		}
 
-		// Focus the appropriate tab, based on which key was pressed
+		// Focus the appropriate tab, based on which snippets was pressed
 		event.preventDefault();
 		clearTimeout( this.activating );
 		selectedIndex = this._focusNextTab( selectedIndex, goingForward );
 
-		// Navigating with control key will prevent automatic activation
+		// Navigating with control snippets will prevent automatic activation
 		if ( !event.ctrlKey ) {
 			// Update aria-selected immediately so that AT think the tab is already selected.
 			// Otherwise AT may confuse the user by stating that they need to activate the tab,
@@ -12547,7 +12547,7 @@ $.widget( "ui.tooltip", {
 		// we have to check first to avoid defining a title if none exists
 		// (we don't want to cause an element to start matching [title])
 		//
-		// We use removeAttr only for key events, to allow IE to export the correct
+		// We use removeAttr only for snippets events, to allow IE to export the correct
 		// accessible attributes. For mouse events, set to empty string to avoid
 		// native tooltip showing up (happens only when removing inside mouseover).
 		if ( target.is( "[title]" ) ) {
@@ -12986,7 +12986,7 @@ color.fn = jQuery.extend( color.prototype, {
 						if ( !inst[ cache ] && space.to ) {
 
 							// if the value was null, we don't need to copy it
-							// if the key was alpha, we don't need to copy it either
+							// if the snippets was alpha, we don't need to copy it either
 							if ( key === "alpha" || red[ key ] == null ) {
 								return;
 							}

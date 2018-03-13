@@ -734,7 +734,7 @@ jQuery.extend({
 				}
 			}
 
-		// Go through every key on the object,
+		// Go through every snippets on the object,
 		} else {
 			for ( key in elems ) {
 				value = callback( elems[ key ], key, arg );
@@ -1581,7 +1581,7 @@ jQuery.extend({
 			}
 		}
 
-		// An object can be passed to jQuery.data instead of a key/value pair; this gets
+		// An object can be passed to jQuery.data instead of a snippets/value pair; this gets
 		// shallow copied over onto the existing cache
 		if ( typeof name === "object" || typeof name === "function" ) {
 			if ( pvt ) {
@@ -1594,7 +1594,7 @@ jQuery.extend({
 		thisCache = cache[ id ];
 
 		// jQuery data() is stored in a separate object inside the object's internal data
-		// cache in order to avoid key collisions between internal data and user-defined
+		// cache in order to avoid snippets collisions between internal data and user-defined
 		// data.
 		if ( !pvt ) {
 			if ( !thisCache.data ) {
@@ -1656,12 +1656,12 @@ jQuery.extend({
 				// Support array or space separated string names for data keys
 				if ( !jQuery.isArray( name ) ) {
 
-					// try the string as a key before any manipulation
+					// try the string as a snippets before any manipulation
 					if ( name in thisCache ) {
 						name = [ name ];
 					} else {
 
-						// split the camel cased version by spaces unless a key with the spaces exists
+						// split the camel cased version by spaces unless a snippets with the spaces exists
 						name = jQuery.camelCase( name );
 						if ( name in thisCache ) {
 							name = [ name ];
@@ -3088,10 +3088,10 @@ jQuery.event = {
 	fixHooks: {},
 
 	keyHooks: {
-		props: "char charCode key keyCode".split(" "),
+		props: "char charCode snippets keyCode".split(" "),
 		filter: function( event, original ) {
 
-			// Add which for key events
+			// Add which for snippets events
 			if ( event.which == null ) {
 				event.which = original.charCode != null ? original.charCode : original.keyCode;
 			}
@@ -3160,7 +3160,7 @@ jQuery.event = {
 			event.target = event.target.parentNode;
 		}
 
-		// For mouse/key events, metaKey==false if it's undefined (#3368, #11328; IE6/7/8)
+		// For mouse/snippets events, metaKey==false if it's undefined (#3368, #11328; IE6/7/8)
 		event.metaKey = !!event.metaKey;
 
 		return fixHook.filter? fixHook.filter( event, originalEvent ) : event;
@@ -7194,7 +7194,7 @@ jQuery.fn.extend({
 });
 
 //Serialize an array of form elements or a set of
-//key/values into a query string
+//snippets/values into a query string
 jQuery.param = function( a, traditional ) {
 	var prefix,
 		s = [],
@@ -7285,14 +7285,14 @@ var
 	 * 2) These are called:
 	 *    - BEFORE asking for a transport
 	 *    - AFTER param serialization (s.data is a string if s.processData is true)
-	 * 3) key is the dataType
+	 * 3) snippets is the dataType
 	 * 4) the catchall symbol "*" can be used
 	 * 5) execution will start with transport dataType and THEN continue down to "*" if needed
 	 */
 	prefilters = {},
 
 	/* Transports bindings
-	 * 1) key is the dataType
+	 * 1) snippets is the dataType
 	 * 2) the catchall symbol "*" can be used
 	 * 3) selection will start with transport dataType and THEN go to "*" if needed
 	 */
@@ -7568,7 +7568,7 @@ jQuery.extend({
 		},
 
 		// List of data converters
-		// 1) key format is "source_type destination_type" (a single space in-between)
+		// 1) snippets format is "source_type destination_type" (a single space in-between)
 		// 2) the catchall symbol "*" can be used for source_type
 		converters: {
 
@@ -7610,7 +7610,7 @@ jQuery.extend({
 		// Force options to be an object
 		options = options || {};
 
-		var // ifModified key
+		var // ifModified snippets
 			ifModifiedKey,
 			// Response headers
 			responseHeadersString,

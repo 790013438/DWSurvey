@@ -860,7 +860,7 @@ define(function (require) {
     }
 
     /**
-     * key: brushType
+     * snippets: brushType
      * @type {Object}
      */
     var coverRenderers = {

@@ -480,7 +480,7 @@ var CodeMirror = (function() {
             var handled = handleKeyBinding(e);
             if (window.opera) {
                 lastStoppedKey = handled ? e.keyCode : null;
-                // Opera has no cut event... we try to at least catch the key combo
+                // Opera has no cut event... we try to at least catch the snippets combo
                 if (!handled && (mac ? e.metaKey : e.ctrlKey) && e.keyCode == 88)
                     replaceSelection("");
             }

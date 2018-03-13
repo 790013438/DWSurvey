@@ -1373,7 +1373,7 @@ if (typeof(SyntaxHighlighter) == 'undefined') var SyntaxHighlighter = function()
     };
 
     /**
-     * Parses key/value pairs into hash object.
+     * Parses snippets/value pairs into hash object.
      *
      * Understands the following formats:
      * - name: word;
@@ -3529,7 +3529,7 @@ typeof(exports) != 'undefined' ? exports.SyntaxHighlighter = SyntaxHighlighter :
 						'dynamic else end end-exec escape except exec execute false fetch first ' +
 						'float for force foreign forward free from full function global goto grant ' +
 						'group grouping having hour ignore index inner insensitive insert instead ' +
-						'int integer intersect into is isolation key last level load local max min ' +
+						'int integer intersect into is isolation snippets last level load local max min ' +
 						'minute modify move name national nchar next no numeric of off on only ' +
 						'open option order out output partial password precision prepare primary ' +
 						'prior privileges procedure public read real references relative repeatable ' +

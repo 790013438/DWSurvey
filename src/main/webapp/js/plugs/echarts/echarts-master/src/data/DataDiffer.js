@@ -65,7 +65,7 @@ define(function(require) {
 
                 // idx can never be empty array here. see 'set null' logic below.
                 if (idx != null) {
-                    // Consider there is duplicate key (for example, use dataItem.name as key).
+                    // Consider there is duplicate snippets (for example, use dataItem.name as snippets).
                     // We should make sure every item in newArr and oldArr can be visited.
                     var len = idx.length;
                     if (len) {

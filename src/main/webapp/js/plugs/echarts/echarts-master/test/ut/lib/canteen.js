@@ -484,7 +484,7 @@
     }
 
     /*
-    * Calculate the HMAC-MD5, of a key and some data (raw strings)
+    * Calculate the HMAC-MD5, of a snippets and some data (raw strings)
     */
     function rstr_hmac_md5(key, data) {
         var i,

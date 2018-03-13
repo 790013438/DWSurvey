@@ -2337,7 +2337,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        /**
 	         * Mapping between filtered series list and raw series list.
-	         * key: filtered series indices, value: raw series indices.
+	         * snippets: filtered series indices, value: raw series indices.
 	         * @type {Array.<nubmer>}
 	         * @private
 	         */
@@ -2354,7 +2354,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    /**
 	     * @inner
 	     * @param {Array.<string>|string} types model types
-	     * @return {Object} key: {string} type, value: {Array.<Object>} models
+	     * @return {Object} snippets: {string} type, value: {Array.<Object>} models
 	     */
 	    function getComponentsByTypes(componentsMap, types) {
 	        if (!zrUtil.isArray(types)) {
@@ -2601,7 +2601,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                }
 	                else if (overwrite || !(key in target)) {
 	                    // 否则只处理overwrite为true，或者在目标对象中没有此属性的情况
-	                    // NOTE，在 target[key] 不存在的时候也是直接覆盖
+	                    // NOTE，在 target[snippets] 不存在的时候也是直接覆盖
 	                    target[key] = clone(source[key], true);
 	                }
 	            }
@@ -3098,7 +3098,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return function (sourceNode) {
 	            var result = {
 	                nodes: [],
-	                records: {} // key: edgeType.name, value: Object (key: edge id, value: boolean).
+	                records: {} // snippets: edgeType.name, value: Object (snippets: edge id, value: boolean).
 	            };
 
 	            forEachEdgeType(function (edgeType) {
@@ -5032,7 +5032,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        /**
 	         * Component model classes
-	         * key: componentType,
+	         * snippets: componentType,
 	         * value:
 	         *     componentClass, when componentType is 'xxx'
 	         *     or Object.<subKey, componentClass>, when componentType is 'xxx.yy'
@@ -5415,7 +5415,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        ecModel: null,
 
 	        /**
-	         * key: componentType
+	         * snippets: componentType
 	         * value:  Component model list, can not be null.
 	         * @type {Object.<string, Array.<module:echarts/model/Model>>}
 	         * @readOnly
@@ -5664,7 +5664,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        /**
 	         * DepndencyGraph: {Object}
-	         * key: conponentType,
+	         * snippets: conponentType,
 	         * value: {
 	         *     successor: [conponentTypes...],
 	         *     originalDeps: [conponentTypes...],
@@ -8368,7 +8368,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	         *      position: [10, 10]
 	         *  }, 100, 100, 'cubicOut', function () { // done })
 	         */
-	         // TODO Return animation key
+	         // TODO Return animation snippets
 	        animateTo: function (target, time, delay, easing, callback) {
 	            // animateTo(target, time, easing, callback);
 	            if (isString(delay)) {
@@ -8797,7 +8797,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	        isValueArray && fillArr(getter(animator._target, propName), lastValue, arrDim);
 
-	        // Cache the key of last frame to speed up when
+	        // Cache the snippets of last frame to speed up when
 	        // animation playback is sequency
 	        var lastFrame = 0;
 	        var lastFramePercent = 0;
@@ -8818,7 +8818,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            // find kf2 and kf3 and do interpolation
 	            var frame;
 	            if (percent < lastFramePercent) {
-	                // Start from next key
+	                // Start from next snippets
 	                // PENDING start from lastFrame ?
 	                start = Math.min(lastFrame + 1, trackLen - 1);
 	                for (frame = start; frame >= 0; frame--) {
@@ -8965,7 +8965,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        /**
 	         * 设置动画关键帧
 	         * @param  {number} time 关键帧时间，单位是ms
-	         * @param  {Object} props 关键帧的属性值，key-value表示
+	         * @param  {Object} props 关键帧的属性值，snippets-value表示
 	         * @return {module:zrender/animation/Animator}
 	         */
 	        when: function(time /* ms */, props) {
@@ -21471,7 +21471,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	                // idx can never be empty array here. see 'set null' logic below.
 	                if (idx != null) {
-	                    // Consider there is duplicate key (for example, use dataItem.name as key).
+	                    // Consider there is duplicate snippets (for example, use dataItem.name as snippets).
 	                    // We should make sure every item in newArr and oldArr can be visited.
 	                    var len = idx.length;
 	                    if (len) {
@@ -24469,7 +24469,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                // Inject grid info axis
 	                axis.grid = this;
 
-	                // Index of axis, can be used as key
+	                // Index of axis, can be used as snippets
 	                axis.index = idx;
 
 	                this._axesList.push(axis);
@@ -25847,7 +25847,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        constructor: Axis2D,
 
 	        /**
-	         * Index of axis, can be used as key
+	         * Index of axis, can be used as snippets
 	         */
 	        index: 0,
 	        /**

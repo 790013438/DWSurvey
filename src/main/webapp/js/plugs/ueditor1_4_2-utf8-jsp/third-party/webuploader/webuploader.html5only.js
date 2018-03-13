@@ -187,7 +187,7 @@
              * @return {Boolean}
              * @example
              * console.log( Base.isPromise() );    // => false
-             * console.log( Base.isPromise({ key: '123' }) );    // => false
+             * console.log( Base.isPromise({ snippets: '123' }) );    // => false
              * console.log( Base.isPromise( Base.Deferred().promise() ) );    // => true
              *
              * // Deferred也是一个Promise
@@ -716,8 +716,8 @@
             /**
              * 获取或者设置Uploader配置项。
              * @method option
-             * @grammar option( key ) => *
-             * @grammar option( key, val ) => self
+             * @grammar option( snippets ) => *
+             * @grammar option( snippets, val ) => self
              * @example
              *
              * // 初始状态图片上传前不会压缩

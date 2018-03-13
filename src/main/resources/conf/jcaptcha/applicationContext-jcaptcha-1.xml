@@ -33,6 +33,6 @@
     <bean id="fastHashMapCaptchaStore" 
       class="com.octo.captcha.service.captchastore.FastHashMapCaptchaStore"/>       
     <!--you can define more than one captcha engine here -->       
-    <bean id="captchaEngineEx" class="com.key.common.plugs.jcaptcha.CaptchaEngineEx"/>
+    <bean id="captchaEngineEx" class="com.snippets.common.plugs.jcaptcha.CaptchaEngineEx"/>
     
 </beans>

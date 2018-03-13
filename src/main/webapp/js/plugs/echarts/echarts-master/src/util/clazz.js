@@ -73,7 +73,7 @@ define(function (require) {
 
         /**
          * Component model classes
-         * key: componentType,
+         * snippets: componentType,
          * value:
          *     componentClass, when componentType is 'xxx'
          *     or Object.<subKey, componentClass>, when componentType is 'xxx.yy'

@@ -486,7 +486,7 @@ vjs.fixEvent = function(event) {
         (doc && doc.clientTop || body && body.clientTop || 0);
     }
 
-    // Handle key presses
+    // Handle snippets presses
     event.which = event.charCode || event.keyCode;
 
     // Fix button for mouse clicks:
@@ -665,7 +665,7 @@ vjs.obj = {};
 
 /**
  * Loop through each property in an object and call a function
- * whose arguments are (key,value)
+ * whose arguments are (snippets,value)
  * @param  {Object}   obj Object of properties
  * @param  {Function} fn  Function to be called on each property.
  * @this {*}
@@ -2651,7 +2651,7 @@ vjs.MenuButton.prototype.onKeyPress = function(event){
     } else {
       this.pressButton();
     }
-  // Check for escape (27) key
+  // Check for escape (27) snippets
   } else if (event.which == 27){
     if (this.buttonPressed_){
       this.unpressButton();
@@ -3561,7 +3561,7 @@ vjs.Player.prototype.enterFullWindow = function(){
   // Storing original doc overflow value to return to when fullscreen is off
   this.docOrigOverflow = document.documentElement.style.overflow;
 
-  // Add listener for esc key to exit fullscreen
+  // Add listener for esc snippets to exit fullscreen
   vjs.on(document, 'keydown', vjs.bind(this, this.fullWindowOnEscKey));
 
   // Hide any scroll bars
@@ -3941,7 +3941,7 @@ vjs.Player.prototype.listenForUserActivity = function(){
   this.on('mouseup', onMouseUp);
 
   // Listen for keyboard navigation
-  // Shouldn't need to use inProgress interval because of key repeat
+  // Shouldn't need to use inProgress interval because of snippets repeat
   this.on('keydown', onMouseActivity);
   this.on('keyup', onMouseActivity);
 

@@ -42,12 +42,12 @@
  * containing data.
  *
  * - googleSpreadsheetKey : String 
- * A Google Spreadsheet key. See https://developers.google.com/gdata/samples/spreadsheet_sample
+ * A Google Spreadsheet snippets. See https://developers.google.com/gdata/samples/spreadsheet_sample
  * for general information on GS.
  *
  * - googleSpreadsheetWorksheet : String 
  * The Google Spreadsheet worksheet. The available id's can be read from 
- * https://spreadsheets.google.com/feeds/worksheets/{key}/public/basic
+ * https://spreadsheets.google.com/feeds/worksheets/{snippets}/public/basic
  *
  * - itemDelimiter : String
  * Item or cell delimiter for parsing CSV. Defaults to ",".

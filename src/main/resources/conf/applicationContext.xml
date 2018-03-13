@@ -13,7 +13,7 @@
 	<description>Spring公共配置</description>
 
 	<!-- 定义受环境影响易变的变量 -->
-	<bean class="com.key.common.utils.DiaowenProperty" init-method="diaowenInit" >
+	<bean class="com.snippets.common.utils.DiaowenProperty" init-method="diaowenInit" >
 		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
 		<property name="ignoreResourceNotFound" value="true" />
 		<property name="locations">
@@ -30,11 +30,11 @@
 
 	<!-- 使用annotation 自动注册bean,并检查@Required,@Autowired的属性已被注入 -->
 	<!-- 扫描并自动装配 -->
-	<context:component-scan base-package="com.key.dwsurvey" />
-	<context:component-scan base-package="com.key.common" />
+	<context:component-scan base-package="com.snippets.dwsurvey" />
+	<context:component-scan base-package="com.snippets.common" />
 
 	<!-- 以静态变量保存ApplicationContext -->
-	<bean class="com.key.common.utils.SpringContextHolder" lazy-init="false" />
+	<bean class="com.snippets.common.utils.SpringContextHolder" lazy-init="false" />
 	
 	<!-- 数据源配置,使用应用内的DBCP数据库连接池 -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
@@ -73,8 +73,8 @@
 		</property>
 		<property name="packagesToScan">	
 				<list>
-					<value>com.key.common.base.entity</value>
-					<value>com.key.dwsurvey.entity</value>
+					<value>com.snippets.common.base.entity</value>
+					<value>com.snippets.dwsurvey.entity</value>
 				</list>
 		</property>
 	</bean>

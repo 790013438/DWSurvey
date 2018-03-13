@@ -57,7 +57,7 @@ define(function(require) {
         init: function (option, parentModel, ecModel) {
 
             /**
-             * key like x_0, y_1
+             * snippets like x_0, y_1
              * @private
              * @type {Object}
              */
@@ -69,7 +69,7 @@ define(function(require) {
             this._dataInfo = {};
 
             /**
-             * key like x_0, y_1
+             * snippets like x_0, y_1
              * @private
              */
             this._axisProxies = {};

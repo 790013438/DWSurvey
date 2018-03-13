@@ -78,7 +78,7 @@
 				// Listen for keyboard events such as <space>, <left> and <right>
 				.bind('keydown', function(event){
 					
-					//Ignore if a key combo was used
+					//Ignore if a snippets combo was used
 					if(event.ctrlKey || event.altKey || event.metaKey || event.shiftKey){
 						return;
 					}

@@ -893,9 +893,9 @@ UE.parse.register('background', function (utils) {
 UE.parse.register('list',function(utils){
     var customCss = [],
         customStyle = {
-            'cn'    :   'cn-1-',
-            'cn1'   :   'cn-2-',
-            'cn2'   :   'cn-3-',
+            'cn'    :   'com-1-',
+            'cn1'   :   'com-2-',
+            'cn2'   :   'com-3-',
             'num'   :   'num-1-',
             'num1'  :   'num-2-',
             'num2'  :   'num-3-',

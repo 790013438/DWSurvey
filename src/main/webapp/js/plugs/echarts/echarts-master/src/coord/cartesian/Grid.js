@@ -316,7 +316,7 @@ define(function(require, factory) {
                 // Inject grid info axis
                 axis.grid = this;
 
-                // Index of axis, can be used as key
+                // Index of axis, can be used as snippets
                 axis.index = idx;
 
                 this._axesList.push(axis);

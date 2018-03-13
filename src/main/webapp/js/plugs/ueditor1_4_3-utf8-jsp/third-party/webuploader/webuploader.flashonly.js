@@ -770,8 +770,8 @@
             /**
              * 获取或者设置Uploader配置项。
              * @method option
-             * @grammar option( key ) => *
-             * @grammar option( key, val ) => self
+             * @grammar option( snippets ) => *
+             * @grammar option( snippets, val ) => self
              * @example
              *
              * // 初始状态图片上传前不会压缩

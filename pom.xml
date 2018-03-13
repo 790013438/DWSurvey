@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>keyuan</groupId>
+	<groupId>com.snippets</groupId>
   <artifactId>diaowen</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
@@ -157,11 +157,6 @@
 		    <version>${org.struts2.version}</version>
 		</dependency>
 		
-    <dependency>
-		    <groupId>org.apache.struts</groupId>
-		    <artifactId>struts2-convention-plugin</artifactId>
-		    <version>${org.struts2.version}</version>
-		</dependency>
 
     <dependency>
 		    <groupId>org.hibernate</groupId>
@@ -285,13 +280,6 @@
             <artifactId>spring-expression</artifactId>
             <version>${org.springframework.version}</version>
         </dependency>
-		
-		<!-- https://mvnrepository.com/artifact/org.springframework/spring-aspects -->
-		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-aspects</artifactId>
-		    <version>${org.springframework.version}</version>
-		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -433,14 +421,9 @@
             <artifactId>guava</artifactId>
             <version>r09</version>
         </dependency>
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>17.0</version>
-        </dependency>
-        
-        
-         <!-- 读取字节码包 -->
+
+
+	  <!-- 读取字节码包 -->
         <dependency>
             <groupId>org.javassist</groupId>
             <artifactId>javassist</artifactId>

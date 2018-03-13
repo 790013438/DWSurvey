@@ -18,14 +18,14 @@ define(function(require) {
     function Parallel(parallelModel, ecModel, api) {
 
         /**
-         * key: dimension
+         * snippets: dimension
          * @type {Object.<string, module:echarts/coord/parallel/Axis>}
          * @private
          */
         this._axesMap = {};
 
         /**
-         * key: dimension
+         * snippets: dimension
          * value: {position: [], rotation, }
          * @type {Object.<string, Object>}
          * @private

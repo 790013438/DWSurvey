@@ -65,7 +65,7 @@ define(function (require) {
         return function (sourceNode) {
             var result = {
                 nodes: [],
-                records: {} // key: edgeType.name, value: Object (key: edge id, value: boolean).
+                records: {} // snippets: edgeType.name, value: Object (snippets: edge id, value: boolean).
             };
 
             forEachEdgeType(function (edgeType) {
